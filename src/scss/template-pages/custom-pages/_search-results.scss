@@ -1,0 +1,13 @@
+#search-results {
+    position: relative;
+    z-index: 2;
+    @include padding(top, 8rem);
+
+    .content-wrapper {
+        padding-bottom: 3rem;
+
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+    }
+}

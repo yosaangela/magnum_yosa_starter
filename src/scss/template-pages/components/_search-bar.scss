@@ -1,0 +1,35 @@
+.search-bar {
+    background-color: white;
+    border-radius: $border-radius-big;
+    box-shadow: $box-shadow-small;
+
+    input,
+    button {
+        border-radius: $border-radius-big;
+        max-width: 50%;
+    }
+
+    input {
+        &::placeholder {
+            font-style: italic;
+            background-image: url("../../src/img/icons/search.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left center;
+            text-indent: 1.75rem;
+            color: #c2afa8;
+
+            // No background on Mozilla
+            @-moz-document url-prefix() {
+                background: none;
+            }
+        }
+
+        &:focus {
+            border: none;
+            outline: none;
+            background-image: none;
+            text-indent: 0px;
+        }
+    }
+}

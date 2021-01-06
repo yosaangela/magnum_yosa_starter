@@ -1,0 +1,55 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-sm-4 p-2 mb-1 bordered-text">
+        <span>First Name</span>
+        [text* first-name class:input-field placeholder "First name"]
+    </div>
+    <div class="col-sm-4 p-2 mb-1 bordered-text">
+        <span>Last Name</span>
+        [text* first-name class:input-field placeholder "last name"]
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-sm-4 p-2 mb-1 bordered-text">
+        <span>Telephone</span>
+        [tel* phone-number class:input-field placeholder "your phone"]
+    </div>
+    <div class="col-sm-4 p-2 mb-1 bordered-text">
+        <span>Email</span>
+        [email* email-name class:input-field placeholder "your email"]
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-sm-4 p-2 mb-1 bordered-text">
+        <span>Addresse</span>
+        [text* address class:input-field placeholder "your address"]
+    </div>
+    <div class="col-sm-2 p-2 mb-1 bordered-text">
+        <span>Placename</span>
+        [text* place-name class:input-field placeholder "your placename"]
+    </div>
+    <div class="col-sm-2 p-2 mb-1 bordered-text">
+        <span>Post Code</span>
+        [number* post-code class:input-field "your post-code number"]
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-sm-8 p-2 mb-1 bordered-text">
+        <span>Type of application</span>
+        [select* application-type class:input-field-option "Bussiness" "Private" "Lokako"]
+    </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-sm-8 p-2 mb-2 bordered-text">
+        <span>Message</span>
+        [textarea message rows:5 class:input-field placeholder "Your Message"]
+    </div>
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="col-sm-8 p-2 d-flex justify-content-center flex-column">
+        [submit class:btn-form "Submit"]
+    </div>
+</div>

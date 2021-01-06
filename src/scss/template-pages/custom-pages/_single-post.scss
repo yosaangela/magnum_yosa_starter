@@ -1,0 +1,133 @@
+#single-post {
+    position: relative;
+    z-index: 2;
+
+    @include padding(top, 12rem);
+
+    @media screen and (max-width: 1440px) {
+        @include padding(top, 10rem);
+    }
+
+    .header-wrapper {
+        h1,
+        span,
+        a {
+            color: $color-offwhite;
+        }
+
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: cover;
+            clip-path: circle();
+        }
+    }
+
+    .featured-image {
+        background-color: white;
+        width: 100%;
+        border-radius: $border-radius-medium $border-radius-medium 0 0;
+    }
+
+    .content-wrapper {
+        background-color: white;
+        box-shadow: $box-shadow-small;
+
+        border-radius: 0 0 $border-radius-medium $border-radius-medium;
+
+        &.without-thumbnail {
+            border-radius: $border-radius-medium;
+        }
+    }
+
+    .share-wrapper {
+        border-top: 1px solid $color-offwhite;
+
+        #share {
+            i.jssocials-share-logo {
+                position: relative;
+                display: inline-block;
+                width: 2rem;
+                height: 2rem;
+                border-radius: $border-radius-small;
+
+                &.fcbk {
+                    background-image: url(./../../src/img/icons/facebook.svg);
+                    background-size: contain;
+
+                    &:hover {
+                        filter: brightness(75%);
+                    }
+                }
+
+                &.lnkdn {
+                    background-image: url(./../../src/img/icons/linkedin.svg);
+                    background-size: contain;
+
+                    &:hover {
+                        filter: brightness(75%);
+                    }
+                }
+
+                &.sup {
+                    background-image: url(./../../src/img/icons/whatsapp.svg);
+                    background-size: contain;
+
+                    &:hover {
+                        filter: brightness(75%);
+                    }
+                }
+
+                &.twtr {
+                    background-image: url(./../../src/img/icons/twitter.svg);
+                    background-size: contain;
+
+                    &:hover {
+                        filter: brightness(75%);
+                    }
+                }
+            }
+
+            .jssocials-shares {
+                > div {
+                    display: inline-block;
+                    margin-right: 0.5rem;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .comment-wrapper {
+        background-color: white;
+        box-shadow: $box-shadow-small;
+        border-radius: $border-radius-medium;
+    }
+
+    .card-posts {
+        .card-wrapper {
+            @include media-breakpoint-down(sm) {
+                &:last-of-type {
+                    margin-bottom: 0 !important;
+                }
+            }
+
+            @include media-breakpoint-between(md, lg) {
+                &:nth-last-child(-n + 2) {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+    }
+    .post-navigation {
+        width: 100%;
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+}

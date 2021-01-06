@@ -1,0 +1,326 @@
+#masthead {
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	transition: $transition-header;
+	border-bottom: 1px solid $color-offwhite;
+
+	@include media-breakpoint-down(md) {
+		display: block;
+		padding: 0;
+	}
+
+	/*--------------------------------------------------------------
+     *STYLES FOR: SEARCH RESULTS
+    --------------------------------------------------------------*/
+
+	&.header-search-results {
+		position: sticky;
+		background-color: $color-primary;
+
+		&::after {
+			content: " ";
+			position: absolute;
+			bottom: -30px;
+			left: 0;
+			width: 100%;
+			height: 30px;
+			background-color: $color-secondary;
+		}
+	}
+
+	/*--------------------------------------------------------------
+     *GENERAL STYLES
+    --------------------------------------------------------------*/
+
+	.nav-link-styles {
+		color: $color-offwhite;
+		font-family: $font-primary;
+		font-weight: 600;
+		// font-size: 16px;
+		text-decoration: none;
+		transition: $transition-general;
+		box-shadow: none !important;
+		margin-right: 1.5rem;
+
+		&:hover {
+			color: white;
+		}
+	}
+
+	// Font Awesome
+	.social-medias {
+		svg {
+			font-size: 1.75rem;
+			color: $color-offwhite;
+			@include margin(right, 0.5rem);
+
+			&:hover {
+				color: white;
+			}
+		}
+	}
+
+	/*--------------------------------------------------------------
+     *CONTAINER WRAPPER
+    --------------------------------------------------------------*/
+	.container {
+		display: flex;
+		align-items: center;
+
+		@include media-breakpoint-down(md) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+
+	/*--------------------------------------------------------------
+     *LOGO STYLES
+     *MOBILE & DESKTOP EFFECT
+    --------------------------------------------------------------*/
+	.site-branding {
+		img {
+			transition: $transition-header;
+
+			// position: absolute;
+			// top: 1.25rem;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+			max-width: 17.8rem;
+			height: auto;
+
+			@media screen and (max-width: 1440px) {
+				width: 15.8rem;
+			}
+
+			@include media-breakpoint-down(md) {
+				width: 12.5rem;
+			}
+
+			// @include media-breakpoint-down(sm) {
+			//     width: 60px;
+			// }
+		}
+	}
+
+	/*--------------------------------------------------------------
+     *MENU NAVIGATION FROM WORDPRESS
+     *MOBILE & DESKTOP EFFECT
+    --------------------------------------------------------------*/
+	.main-navigation {
+		display: flex;
+		justify-content: flex-end;
+
+		width: 100%;
+		padding: 2rem 0;
+
+		transition: $transition-header;
+
+		@include media-breakpoint-down(md) {
+			display: none;
+			padding-top: 0;
+		}
+
+		ul {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				.nav-link {
+					@extend .nav-link-styles;
+				}
+			}
+
+			// Link active
+			.current-menu-item {
+				a {
+					color: white;
+					position: relative;
+					// text-decoration: underline;
+					&::after {
+						content: "";
+						background-color: $color-offwhite;
+						height: 1px;
+						position: absolute;
+						width: 100%;
+						left: 0;
+						top: 20px;
+					}
+				}
+			}
+		}
+	}
+
+	/*--------------------------------------------------------------
+     *DROPDOWN MENU
+    --------------------------------------------------------------*/
+	.menu-item-has-children {
+		position: relative;
+
+		.dropdown-toggle {
+			&::after {
+				position: relative;
+				top: -0.2rem;
+				right: -0.4rem;
+				content: " ";
+				border: solid $color-text-heading-primary;
+				border-width: 0 3px 3px 0;
+				display: inline-block;
+				padding: 3px;
+				transform: rotate(45deg);
+				-webkit-transform: rotate(45deg);
+			}
+		}
+
+		.dropdown-menu {
+			display: none !important;
+			background-color: $color-primary;
+			padding: 1rem 2rem;
+			border-radius: $border-radius-small;
+			margin-top: 1rem;
+			position: absolute !important;
+			top: auto !important;
+			left: 50% !important;
+			transform: translateX(-50%) !important;
+			min-width: 20vw;
+
+			@include media-breakpoint-down(sm) {
+				padding: 1rem;
+			}
+
+			&.show {
+				display: block !important;
+
+				@include media-breakpoint-down(md) {
+					position: relative !important;
+					width: 100%;
+				}
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: -7px;
+				left: 50%;
+				transform: translateX(-50%);
+				width: 0;
+				height: 0;
+				border-left: 10px solid transparent;
+				border-right: 10px solid transparent;
+
+				border-bottom: 10px solid $color-primary;
+			}
+
+			.menu-item {
+				margin-bottom: 0.25rem;
+
+				@include media-breakpoint-down(md) {
+					padding: 0.5rem;
+				}
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+
+				.dropdown-item {
+					@extend .nav-link-styles;
+					font-size: 0.8rem;
+					color: $color-offwhite;
+					padding: 0;
+
+					a {
+						padding: 0;
+					}
+				}
+			}
+
+			.active {
+				a {
+					color: $color-secondary !important;
+				}
+			}
+		}
+	}
+
+	/*--------------------------------------------------------------
+     *MENU WRAPPER FOR LOGO AND HAMBUGER
+     *MOBILE EFFECT
+    --------------------------------------------------------------*/
+	.menu-wrapper {
+		@include media-breakpoint-down(md) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+		}
+	}
+
+	/*--------------------------------------------------------------
+     *WHEN NAVBAR SCROLLED
+     *MOBILE & DESKTOP EFFECT
+    --------------------------------------------------------------*/
+	&.header-scrolled {
+		box-shadow: $box-shadow-medium;
+		background-color: $color-primary;
+		border-bottom: none;
+	}
+
+	/*--------------------------------------------------------------
+     *HAMBURGER STYLES
+     *SHOW HAMBURGER ONLY ON MOBILE SCREEN
+    --------------------------------------------------------------*/
+	.hamburger {
+		display: none;
+
+		@include media-breakpoint-down(md) {
+			display: block;
+			padding: 15px 0;
+
+			.hamburger-inner {
+				top: 25px;
+				background-color: $color-offwhite;
+
+				&::before {
+					background-color: $color-offwhite;
+				}
+
+				&::after {
+					background-color: $color-offwhite;
+				}
+			}
+		}
+	}
+
+	/*--------------------------------------------------------------
+     *WHEN HAMBURGER CLICKED
+     *MOBILE ONLY EFFECT
+    --------------------------------------------------------------*/
+	&.is-active {
+		margin-bottom: 0;
+		background-color: $color-primary;
+
+		.main-navigation {
+			@include media-breakpoint-down(md) {
+				display: block;
+				width: 100%;
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-evenly;
+					align-items: flex-start;
+					margin-top: 20px;
+					// min-height: 40vh;
+
+					li {
+						padding: 0 0 20px 0;
+					}
+				}
+			}
+		}
+	}
+}

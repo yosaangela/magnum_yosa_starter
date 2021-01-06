@@ -1,0 +1,41 @@
+#service {
+    position: relative;
+    z-index: 2;
+
+    @include padding(top, 12rem);
+
+    @media screen and (max-width: 1440px) {
+        @include padding(top, 10rem);
+    }
+
+    .header-wrapper {
+        h1,
+        span,
+        a {
+            color: $color-offwhite;
+        }
+
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+            object-fit: cover;
+            clip-path: circle();
+        }
+    }
+
+    .featured-image {
+        width: 100%;
+        border-radius: $border-radius-medium $border-radius-medium 0 0;
+    }
+
+    .content-wrapper {
+        background-color: white;
+        box-shadow: $box-shadow-small;
+
+        border-radius: 0 0 $border-radius-medium $border-radius-medium;
+
+        &.without-thumbnail {
+            border-radius: $border-radius-medium;
+        }
+    }
+}

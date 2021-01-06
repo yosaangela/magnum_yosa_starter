@@ -1,0 +1,58 @@
+.button-primary,
+.button-secondary,
+.button-tertiary {
+    display: inline-block;
+
+    font-family: $font-primary;
+    text-decoration: none;
+
+    transition: 250ms;
+
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.button-primary {
+    position: relative;
+    padding: 0.5rem 1.4rem;
+    background: $color-primary;
+    border-radius: $border-radius-big;
+    color: $color-offwhite;
+
+    &:hover {
+        color: $color-offwhite;
+        background: darken($color: $color-primary, $amount: 10);
+        text-decoration: none;
+    }
+}
+
+.button-secondary {
+    position: relative;
+    padding: 0.5rem 1.4rem;
+    border-radius: $border-radius-big;
+    border: 1px solid $color-primary;
+    background-color: white;
+    color: $color-primary;
+
+    &:hover {
+        color: $color-offwhite;
+        border: 1px solid darken($color: $color-primary, $amount: 10);
+        background-color: darken($color: $color-primary, $amount: 10);
+        text-decoration: none;
+    }
+}
+
+.button-tertiary {
+    position: relative;
+    padding: 1.125rem 4rem;
+    border-radius: $border-radius-big;
+    background-color: $color-secondary;
+    color: $color-offwhite;
+
+    &:hover {
+        color: $color-offwhite;
+        text-decoration: none;
+        background-color: darken($color: $color-secondary, $amount: 10);
+    }
+}

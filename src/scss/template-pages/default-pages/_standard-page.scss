@@ -1,0 +1,25 @@
+#default-page {
+    position: relative;
+    z-index: 2;
+
+    @include padding(top, 12rem);
+
+    @media screen and (max-width: 1440px) {
+        @include padding(top, 10rem);
+    }
+
+    .header-wrapper {
+        h1,
+        span,
+        a {
+            color: $color-offwhite;
+        }
+    }
+
+    .content-wrapper {
+        background-color: white;
+        box-shadow: $box-shadow-small;
+
+        border-radius: $border-radius-medium;
+    }
+}

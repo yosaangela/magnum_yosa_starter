@@ -1,0 +1,12 @@
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+    color: $color-text-body-primary;
+    font-family: $font-primary;
+    line-height: $font-line-height-body;
+}
+
+@import "headings";

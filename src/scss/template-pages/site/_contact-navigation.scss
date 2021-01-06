@@ -1,0 +1,63 @@
+#contact-navigation {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    font-family: $font-secondary;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    .contact-wrapper {
+        @include media-breakpoint-down(sm) {
+            @include margin(bottom, 1rem);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            position: relative;
+            top: 2px;
+
+            max-width: 16px;
+            max-height: 16px;
+        }
+
+        .telephone {
+            margin-right: 1rem;
+
+            .item {
+                margin-right: 1rem;
+
+                @include media-breakpoint-down(md) {
+                    margin-bottom: 0.5rem;
+                }
+
+                &:last-of-type {
+                    margin: 0;
+
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: 0.5rem;
+                    }
+                }
+            }
+        }
+
+        .divider {
+            margin-right: 1rem;
+            position: relative;
+            top: -1px;
+
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+    }
+
+    .logo {
+        img {
+            width: auto;
+            height: 30px;
+        }
+    }
+}

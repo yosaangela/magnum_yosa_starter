@@ -1,0 +1,13 @@
+.blog {
+	background-color: white;
+	border-radius: $border-radius-medium;
+	box-shadow: $box-shadow-small;
+
+	.col-wrapper {
+		border-bottom: 1px solid $color-offwhite;
+
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+}

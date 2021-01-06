@@ -1,0 +1,47 @@
+#not-found {
+    @include padding-y-full;
+    overflow: hidden;
+
+    position: relative;
+    z-index: 1;
+    color: $color-text-body-primary;
+    // background-color: $color-primary;
+
+    &::before {
+        content: "404";
+        color: black;
+        position: absolute;
+        z-index: -10;
+        bottom: -15rem;
+        right: -10rem;
+        opacity: 0.25;
+        font-size: 30rem;
+        font-family: $font-secondary;
+        font-weight: 700;
+
+        @include media-breakpoint-down(sm) {
+            font-size: 10rem;
+            bottom: -5rem;
+            right: -3rem;
+        }
+    }
+
+    span {
+        font-family: $font-secondary;
+        font-size: 8rem;
+        font-weight: 700;
+    }
+
+    h2 {
+        @include margin(bottom, 1rem);
+    }
+
+    a {
+        margin-right: auto;
+    }
+
+    .text-wrapper {
+        position: relative;
+        z-index: 3;
+    }
+}

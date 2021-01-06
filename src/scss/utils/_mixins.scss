@@ -1,0 +1,104 @@
+@mixin padding-y-xsmall {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+@mixin padding-y-small {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+@mixin padding-y-half {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @include media-breakpoint-down(lg) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+@mixin padding-y-full {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    @include media-breakpoint-down(lg) {
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+@mixin padding-y-header {
+    padding-top: 18.75rem;
+    padding-bottom: 14.75rem;
+
+    @media screen and (max-width: 1440px) {
+        padding-top: 12rem;
+        padding-bottom: 8rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 5rem;
+    }
+}
+
+@mixin padding-x-half {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@mixin padding-x-full {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+@mixin padding-bottom-half {
+    padding-bottom: 3rem;
+}
+
+@mixin padding-bottom-full {
+    padding-bottom: 6rem;
+
+    @include media-breakpoint-down(lg) {
+        padding-bottom: 5rem;
+    }
+}
+
+@mixin margin($position, $size) {
+    margin: 0;
+
+    @if $position == "top" {
+        margin-top: $size;
+    }
+    @if $position == "right" {
+        margin-right: $size;
+    }
+    @if $position == "bottom" {
+        margin-bottom: $size;
+    }
+    @if $position == "left" {
+        margin-left: $size;
+    }
+}
+
+@mixin padding($position, $size) {
+    padding: 0;
+
+    @if $position == "top" {
+        padding-top: $size;
+    }
+    @if $position == "right" {
+        padding-right: $size;
+    }
+    @if $position == "bottom" {
+        padding-bottom: $size;
+    }
+    @if $position == "left" {
+        padding-left: $size;
+    }
+}

@@ -1,0 +1,90 @@
+#cta {
+    position: relative;
+    z-index: 2;
+    @include padding-y-full;
+
+    .image-wrapper {
+        padding-left: 15px !important;
+
+        @include media-breakpoint-down(md) {
+            padding-right: 15px !important;
+        }
+
+        .image-cta {
+            border-radius: $border-radius-medium 0 0 $border-radius-medium;
+            object-fit: cover;
+
+            @include media-breakpoint-down(md) {
+                border-radius: $border-radius-medium $border-radius-medium 0 0;
+            }
+        }
+    }
+
+    .content-wrapper {
+        padding-right: 15px !important;
+
+        @include media-breakpoint-down(md) {
+            padding-left: 15px !important;
+        }
+
+        .content {
+            background-color: white;
+            border-radius: 0 $border-radius-medium $border-radius-medium 0;
+
+            @include media-breakpoint-down(md) {
+                border-radius: 0 0 $border-radius-medium $border-radius-medium;
+            }
+        }
+    }
+
+    h2 {
+        color: $color-primary;
+        font-weight: 800;
+    }
+
+    p {
+        font-size: 1.125rem;
+    }
+
+    .button-wrapper {
+        border-color: $color-offwhite;
+
+        @include media-breakpoint-down(sm) {
+            a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// Greek image
+.greek-image {
+    position: absolute;
+    z-index: 0;
+    bottom: 130px;
+    left: 0;
+    width: 100%;
+}
+
+// Modal
+.modal {
+    .close {
+        background-color: white;
+        padding: 0;
+        margin: 0;
+        border: none;
+
+        span {
+            font-size: 1.25rem;
+
+            &:hover {
+                color: $color-secondary;
+            }
+        }
+    }
+
+    .button-secondary {
+        // background-color: inherit;
+    }
+}

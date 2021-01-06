@@ -1,0 +1,13 @@
+$transition-header: all 0.333s linear;
+$transition-general: all 250ms ease-in-out;
+
+$box-shadow-small: 1px 3px 6px 0px rgba(0, 0, 0, 0.16);
+$box-shadow-medium: 0px 5px 10px 0px rgba(87, 87, 87, 0.2);
+$box-shadow-large: 0px 20px 40px 0px rgba(87, 87, 87, 0.15);
+
+$border-radius-small: 4px;
+$border-radius-medium: 8px;
+$border-radius-big: 100px;
+
+@import "colors";
+@import "typography";

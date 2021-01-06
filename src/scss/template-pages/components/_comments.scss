@@ -1,0 +1,157 @@
+#comments {
+	// Comment form
+	.comment-respond {
+		margin-bottom: 2rem;
+		.comment-reply-title {
+			display: none;
+		}
+
+		.comment-form {
+			.comment-notes {
+				display: none;
+			}
+
+			.comment-form-comment {
+				textarea {
+					padding: 1rem;
+					width: 100%;
+					border-radius: $border-radius-medium;
+					border: 1px solid $color-offwhite;
+				}
+
+				label {
+					display: none;
+				}
+			}
+
+			.comment-form-author,
+			.comment-form-email {
+				@include make-col(6);
+				width: 100%;
+				display: inline-block;
+
+				@include media-breakpoint-down(sm) {
+					@include make-col(12);
+				}
+
+				label {
+					display: none;
+				}
+
+				input {
+					padding: 1rem;
+					width: 100%;
+					border-radius: $border-radius-medium;
+					border: 1px solid $color-offwhite;
+				}
+			}
+
+			.comment-form-author {
+				float: left;
+				padding-right: 1rem;
+
+				@include media-breakpoint-down(sm) {
+					padding-right: 0;
+				}
+			}
+
+			.comment-form-email {
+				float: right;
+				padding-left: 1rem;
+
+				@include media-breakpoint-down(sm) {
+					padding-left: 0;
+				}
+			}
+
+			.form-submit {
+				.submit {
+					display: inline-block;
+
+					font-family: $font-primary;
+					text-decoration: none;
+
+					transition: 250ms;
+
+					border: none;
+					outline: none;
+					cursor: pointer;
+
+					position: relative;
+					padding: 0.5rem 1.4rem;
+					background: $color-primary;
+					border-radius: $border-radius-big;
+					color: $color-offwhite;
+
+					&:hover {
+						color: $color-offwhite;
+					}
+				}
+			}
+		}
+	}
+
+	// List comment
+	.comment-list {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 0;
+
+		li.comment {
+			border-top: 1px solid $color-offwhite;
+			padding: 2rem 0;
+
+			.comment-meta {
+				display: flex;
+				align-items: flex-start;
+				margin-bottom: 1rem;
+
+				@include media-breakpoint-down(sm) {
+					flex-direction: column;
+				}
+
+				.comment-author {
+					display: flex;
+					align-items: flex-start;
+					margin-right: 1rem;
+
+					@include media-breakpoint-down(sm) {
+						margin-bottom: 0.75rem;
+						align-items: center;
+					}
+
+					img {
+						margin-right: 1rem;
+						height: 3rem;
+						width: 3rem;
+					}
+
+					.says {
+						display: none;
+					}
+				}
+
+				.comment-metadata > a {
+					pointer-events: none;
+				}
+			}
+
+			.comment-content {
+				margin-top: -2rem;
+				margin-left: 4rem;
+
+				@include media-breakpoint-down(sm) {
+					margin: 0;
+				}
+
+				p {
+					margin-bottom: 0;
+				}
+			}
+
+			.reply {
+				display: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,86 @@
+/*!
+Theme Name: WP 20
+Theme URI: http://underscores.me/
+Author: Herosimo Sribiko
+Author URI: https://herosimo.github.io
+Description: Wordpress for 21st century
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: wordpress-for-21st-century
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+WP 20 is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+# Bootstrap
+--------------------------------------------------------------*/
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1638px,
+);
+
+@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/modal";
+
+/*--------------------------------------------------------------
+# Utils
+--------------------------------------------------------------*/
+@import "utils/utils";
+
+/*--------------------------------------------------------------
+# Hamburger
+--------------------------------------------------------------*/
+@import "hamburgers";
+$hamburger-layer-width: 30px;
+$hamburger-layer-height: 4px;
+
+/*--------------------------------------------------------------
+# Slick
+--------------------------------------------------------------*/
+// @import "../../node_modules/slick-carousel/slick/slick.scss";
+// @import "../../node_modules/slick-carousel/slick/slick-theme.scss";
+
+/*--------------------------------------------------------------
+# Font Awesome
+--------------------------------------------------------------*/
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
+/*--------------------------------------------------------------
+# Template Pages
+--------------------------------------------------------------*/
+@import "template-pages/template-pages";
+
+/*--------------------------------------------------------------
+# General CSS
+--------------------------------------------------------------*/
+html,
+body {
+    position: relative;
+    // overflow-x: hidden;
+
+    background-color: $color-offwhite-background;
+
+    @media screen and (max-width: 1440px) and (min-width: 1024px) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+
+    @media screen and (max-width: 1440px) {
+        font-size: 0.92rem;
+    }
+}
